@@ -1,36 +1,30 @@
 
 
-//Desestructuración
-//Asignación Desestructurante
-
-const persona = {
-    nombre: 'Tony',
-    edad: 45,
-    clave: 'Ironman',
-    rango: 'Soldado',
-};
-
-const {nombre, clave, edad} = persona;
-
-console.log(`Hola ${nombre}, sé que tu eres, ${clave}`);
-console.log(edad);
+const personajes = ['Goku','Vegeta','Trunks'];
+const [ , , p3 ] = personajes;
+console.log( p3 );
 
 
-const otraCosa = ({nombre, edad, clave, rango = 'Capitán'}) => {
-    
-
-    return {
-        nombreClave: clave,
-        anios: edad,
-        latlng: {
-            lat: 123,
-            lng: 312,
-        }
-    }
+const retornaArreglo = () =>{
+    return ['ABC', 123];
 }
 
-const {nombreClave, anios, latlng } = otraCosa(persona);
-const {lat,lng} = latlng;
+const [ letras, numeros ] = retornaArreglo(); 
+console.log(letras, numeros);
 
-console.log(nombreClave, anios);
-console.log(lat,lng);
+
+// Tarea
+// 1. el primer valor del arr se llamará nombre
+// 2. se llamará setNombre
+const useState = ( valor ) => {
+    return [ valor, ()=>{ console.log('Hola Mundo') } ];
+}
+
+const [ nombre, setNombre ] = useState( 'Goku' );
+
+console.log( nombre );
+setNombre();
+
+
+
+
